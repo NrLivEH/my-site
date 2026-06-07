@@ -1,82 +1,212 @@
 <!DOCTYPE HTML>
 
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-<div th:replace="site/head::head(${commons.site_title()},${commons.google_site_verification()}, ${commons.baidu_site_verification()})"></div>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<div th:replace="site/head::head('吴梦婷｜直播带货运营个人网站',${commons.google_site_verification()}, ${commons.baidu_site_verification()})"></div>
 
-<body>
+<body class="portfolio-page">
 
 <!-- header -->
 
 <div th:replace="site/header::header"></div>
 
-<!-- header --> 
+<!-- header -->
 
 <!-- main -->
 
-<main role="main-home-wrapper" class="container">
-  <div class="row">
-    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 ">
-      <article role="pge-title-content">
-        <header>
-          <h2><span>Luis</span> A Java Developer.</h2>
-        </header>
-        <p>maker of things for the web app, always focused on elegant simplicity, relentlessly learning by making mistakes.</p>
-      </article>
-    </section>
-    <th:block th:each="archive,archiveStat : ${archives.list}">
-      <th:block th:if="${archiveStat.index == 1}">
-        <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 grid">
-          <figure class="effect-oscar"> <img th:src="${commons.show_thumb(archive.content)}" alt="" class="img-responsive"/>
-            <figcaption>
-              <h2><th:block th:text="${archive.title}" ></th:block></h2>
-              <p><th:block th:utext="${commons.fmtdate_en(archive.created)}"></th:block></p>
-              <a th:href="${commons.photoPermalink(archive.cid)}">View more</a> </figcaption>
-          </figure>
-        </section>
-      </th:block>
-    </th:block>
+<main role="main-home-wrapper" class="resume-site" data-current-layer="overview">
+  <section class="resume-hero" aria-labelledby="hero-title">
+    <div class="hero-orbit" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="hero-copy">
+      <p class="eyebrow">Live Commerce Operator · Douyin Growth</p>
+      <h1 id="hero-title">吴梦婷</h1>
+      <p class="hero-role">直播带货运营</p>
+      <p class="hero-summary">熟悉抖音直播生态、巨量本地推投放与直播间从 0 到 1 搭建，擅长把“流量、货品、主播、场控、数据复盘”拆成可执行增长链路。</p>
+      <div class="hero-tags" aria-label="核心标签">
+        <span>武汉优先</span>
+        <span>期望 8-12K</span>
+        <span>1 年经验</span>
+        <span>到岗快</span>
+      </div>
+      <div class="hero-actions">
+        <a class="primary-action" href="mailto:1465157275@qq.com">联系我</a>
+        <a class="secondary-action" href="#experience">查看经历</a>
+      </div>
+    </div>
+    <aside class="hero-card" aria-label="联系方式与匹配度">
+      <div class="availability">正在寻找直播带货运营机会</div>
+      <dl>
+        <div>
+          <dt>微信</dt>
+          <dd>NrLivEH0116</dd>
+        </div>
+        <div>
+          <dt>邮箱</dt>
+          <dd>1465157275@qq.com</dd>
+        </div>
+        <div>
+          <dt>学历</dt>
+          <dd>黄冈师范学院 · 新闻与传播本科</dd>
+        </div>
+      </dl>
+    </aside>
+  </section>
 
-    <!-- left -->
-    <div class="clearfix"></div>
-    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 grid">
-      <ul class="grid-lod effect-2" id="grid">
-        <th:block th:each="archive,archiveStat : ${archives.list}">
-          <th:block th:if="${archiveStat.index != 1 && archiveStat.index % 2 == 0}">
-            <li>
-              <figure class="effect-oscar"> <img th:src="${commons.show_thumb(archive.content)}" alt="" class="img-responsive"/>
-                <figcaption>
-                  <h2><th:block th:text="${archive.title}" ></th:block></h2>
-                  <p><th:block th:utext="${commons.fmtdate_en(archive.created)}"></th:block></p>
-                  <a th:href="${commons.photoPermalink(archive.cid)}">View more</a> </figcaption>
-              </figure>
-            </li>
-          </th:block>
-        </th:block>
-      </ul>
-    </section>
+  <nav class="layer-tabs" aria-label="个人网站分层导航">
+    <button type="button" class="active" data-layer="overview">总览</button>
+    <button type="button" data-layer="growth">增长能力</button>
+    <button type="button" data-layer="operations">直播运营</button>
+    <button type="button" data-layer="creative">内容与剪辑</button>
+  </nav>
 
-    <!-- right -->
-    <section class="col-xs-12 col-sm-6 col-md-6 col-lg-6 grid">
-      <ul class="grid-lod effect-2" id="grid">
-        <th:block th:each="archive,archiveStat : ${archives.list}">
-          <th:block th:if="${archiveStat.index != 1 && archiveStat.index % 2 != 0}">
-            <li>
-              <figure class="effect-oscar"> <img th:src="${commons.show_thumb(archive.content)}" alt="" class="img-responsive"/>
-                <figcaption>
-                  <h2><th:block th:text="${archive.title}" ></th:block></h2>
-                  <p><th:block th:utext="${commons.fmtdate_en(archive.created)}"></th:block></p>
-                  <a th:href="${commons.photoPermalink(archive.cid)}">View more</a> </figcaption>
-              </figure>
-            </li>
-          </th:block>
-        </th:block>
+  <section class="layer-stage" aria-live="polite">
+    <article class="layer-panel active" data-panel="overview">
+      <span class="panel-kicker">Layer 01</span>
+      <h2>从直播间搭建到稳定增长的全链路运营</h2>
+      <p>独立负责居然之家线下家居建材商场抖音官方直播运营，覆盖直播策划、排期、选品、脚本、主播配合、现场控场与复盘优化。</p>
+      <ul>
+        <li>搭建直播账号、流程与货品协同体系。</li>
+        <li>围绕曝光、观看、在线峰值、停留、互动、点击与 GMV 做数据复盘。</li>
+        <li>通过福利活动、秒杀套餐与优惠政策提升用户留存、关注与到店核销。</li>
       </ul>
-    </section>
-    <div class="clearfix"></div>
-  </div>
+    </article>
+    <article class="layer-panel" data-panel="growth">
+      <span class="panel-kicker">Layer 02</span>
+      <h2>巨量本地推投放 + 精准人群转化</h2>
+      <p>掌握本地推投放逻辑，能根据直播目标制定推广计划，完成直播间加热、精准人群投放、流量获取与效果优化。</p>
+      <ul>
+        <li>通过投放策略优化提升直播间曝光与进房人数。</li>
+        <li>根据数据及时调整价格机制、直播节奏与商品组合。</li>
+        <li>支持商场线上引流，放大线下到店成交机会。</li>
+      </ul>
+    </article>
+    <article class="layer-panel" data-panel="operations">
+      <span class="panel-kicker">Layer 03</span>
+      <h2>直播全流程 SOP 与跨团队推进</h2>
+      <p>熟悉直播间搭建、开播准备、流量承接、商品链接管理、节奏把控、互动维护与转化提升，能对接商场运营、品牌商家和主播团队推进项目落地。</p>
+      <ul>
+        <li>推动选品、活动方案、价格机制与直播执行落地。</li>
+        <li>具备独立操盘能力，可从 0 到 1 搭建直播体系。</li>
+        <li>抗压性佳，适应新业务、新玩法与快节奏迭代。</li>
+      </ul>
+    </article>
+    <article class="layer-panel" data-panel="creative">
+      <span class="panel-kicker">Layer 04</span>
+      <h2>短视频引流与视觉内容支持</h2>
+      <p>新闻与传播专业背景，参与社团拍摄和广告作品拍摄，熟练使用 Pr / Ps / Ae，具备 H5 制作能力，可支撑直播预热、切片与活动内容包装。</p>
+      <ul>
+        <li>负责短视频引流与直播流量联动。</li>
+        <li>通过内容优化、福利活动与优惠政策增强用户触达。</li>
+        <li>具备导演、策划、拍摄执行与后期剪辑经验。</li>
+      </ul>
+    </article>
+  </section>
+
+  <section class="metrics-strip" aria-label="关键能力指标">
+    <div>
+      <strong>0→1</strong>
+      <span>直播体系搭建</span>
+    </div>
+    <div>
+      <strong>6+</strong>
+      <span>直播运营模块</span>
+    </div>
+    <div>
+      <strong>Pr/Ps/Ae</strong>
+      <span>内容制作工具</span>
+    </div>
+    <div>
+      <strong>GMV</strong>
+      <span>转化复盘导向</span>
+    </div>
+  </section>
+
+  <section class="content-grid" id="experience">
+    <article class="resume-card timeline-card">
+      <div class="section-heading">
+        <span>Experience</span>
+        <h2>工作经历</h2>
+      </div>
+      <div class="timeline-item">
+        <time>2025.09 - 2026.04</time>
+        <h3>湖北缔造嘉讯传媒有限公司</h3>
+        <p class="item-role">直播带货运营 · 居然之家线下家居建材商场抖音官方直播</p>
+        <button type="button" class="accordion-trigger" aria-expanded="true">工作内容</button>
+        <div class="accordion-panel open">
+          <ul>
+            <li>独立完成直播间日常运营管理，包括直播策划、排期安排、选品规划、脚本制定、主播配合及现场控场。</li>
+            <li>负责直播间搭建、开播准备、流量承接、商品链接管理、直播节奏把控、互动维护及转化提升。</li>
+            <li>根据直播目标制定推广计划，进行直播间加热、精准人群投放、流量获取及效果优化。</li>
+            <li>监测并复盘曝光量、观看人数、在线峰值、停留时长、互动率、点击率、转化率、GMV 等核心指标。</li>
+            <li>对接商场运营、品牌商家及主播团队，推进选品、活动方案、价格机制及直播执行落地。</li>
+          </ul>
+        </div>
+        <button type="button" class="accordion-trigger" aria-expanded="false">工作业绩</button>
+        <div class="accordion-panel">
+          <ul>
+            <li>主导抖音直播间从 0 到 1 全链路搭建，完成账号规划、流程搭建、货品体系梳理及团队协作优化。</li>
+            <li>通过巨量本地推策略优化与直播间运营调整，提升直播间曝光量与进房人数，扩大商场线上引流效果。</li>
+            <li>持续迭代直播话术、商品组合及互动玩法，提升用户停留、互动与成交转化。</li>
+          </ul>
+        </div>
+      </div>
+    </article>
+
+    <article class="resume-card strengths-card">
+      <div class="section-heading">
+        <span>Strengths</span>
+        <h2>个人优势</h2>
+      </div>
+      <div class="strength-list">
+        <button type="button" class="strength-item active" data-strength="traffic">
+          <span>01</span>
+          <strong>直播引流与投放</strong>
+          <em>巨量本地推 / 人群投放 / 流量优化</em>
+        </button>
+        <button type="button" class="strength-item" data-strength="studio">
+          <span>02</span>
+          <strong>直播间实操</strong>
+          <em>独立操盘 / SOP / 节奏把控</em>
+        </button>
+        <button type="button" class="strength-item" data-strength="collaboration">
+          <span>03</span>
+          <strong>协同落地</strong>
+          <em>商场 / 品牌 / 主播团队</em>
+        </button>
+      </div>
+      <p class="strength-copy" id="strength-copy">熟悉抖音直播生态及推广工具，掌握直播引流、精准人群投放、流量优化及成交转化方法。</p>
+    </article>
+
+    <article class="resume-card education-card">
+      <div class="section-heading">
+        <span>Education</span>
+        <h2>教育经历</h2>
+      </div>
+      <h3>黄冈师范学院</h3>
+      <p>本科 · 新闻与传播 / 2021 - 2025</p>
+      <ul class="education-list">
+        <li>参加社团拍摄活动，担任导演职位，主导作品策划与拍摄执行。</li>
+        <li>参加大广赛广告作品拍摄，负责后期剪辑工作。</li>
+        <li>熟练掌握 Pr / Ps / Ae，具备 H5 制作能力。</li>
+      </ul>
+    </article>
+
+    <article class="resume-card contact-card">
+      <div class="section-heading">
+        <span>Contact</span>
+        <h2>马上沟通</h2>
+      </div>
+      <p>如果你正在寻找能落地执行、懂直播增长和内容协同的直播带货运营，我可以快速进入项目。</p>
+      <a href="mailto:1465157275@qq.com">1465157275@qq.com</a>
+      <span>微信：NrLivEH0116</span>
+    </article>
+  </section>
 </main>
 
-<!-- main --> 
+<!-- main -->
 
 <!-- footer -->
 <div th:replace="site/footer::footer(${commons.site_title()},${commons.site_record()},${commons.site_url()})"></div>
